@@ -1,0 +1,670 @@
+/* Estilos generales */
+body {
+  display:flex ;
+  font-family: 'Julius Sans One', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px){
+.body{
+  flex-direction: column;
+  align-items:center;
+}
+
+}
+
+header {
+  position: relative;
+}
+
+/* Menú de navegación */
+nav {
+  background-color: #416D19;
+  color: #BFEA7C;
+  padding: 16px;
+  position: fixed;
+  height: 64px;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: #BFEA7C;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+/* Estilos del logo */
+.logo img {
+  width: 190px;
+  /* Ajusta el tamaño del logo según lo desees */
+  height: auto;
+  padding: 40px;
+  padding-top: 60px;
+}
+
+/* Botón hamburguesa (visible solo en móviles) */
+.menu-toggle,
+.menu-close {
+  display: none;
+  font-size: 24px;
+  color: #BFEA7C;
+  cursor: pointer;
+}
+
+/* Estilos responsive para el menú en móviles */
+@media (max-width: 768px) {
+  
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    text-align: center;
+    background-color: #416D19;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    width: 200px;
+    height: 100vh;
+    padding-top: 20px;
+    
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .menu-toggle,
+  .menu-close {
+    display: block;
+    /* Solo se muestran en pantallas pequeñas */
+  }
+
+  nav ul li {
+    margin: 15px 0;
+  }
+
+  nav ul li a {
+    font-size: 18px;
+  }
+}
+
+
+/* Sección hero */
+.hero-section {
+  display: flex;
+  background-image: url('imagenes/bird.jpg');
+  /* Ruta de la imagen */
+  height: 600px;
+  min-width: 100vw;
+  /* Ancho mínimo para ocupar toda la pantalla */
+  background-position: center;
+  background-size: cover;
+  padding-top: 10px;
+}
+
+/* Contenido de la sección */
+.hero-content {
+  display: flex;
+  padding: 30px;
+  padding-top: 70px;
+  /* Espaciado superior */
+}
+
+/* Título de la sección */
+.hero-title {
+  
+  font-family: "Julius Sans One", sans-serif;
+  font-weight: 100;
+  color: #FFF67E;
+  padding: 20px;
+  font-size: 2.25rem;/* Tamaño de texto base (equivalente a 20px) */
+  width: 300px;
+  padding-left: 40px;
+  white-space: break-spaces;
+}
+
+@media (max-width: 768px) {
+  .hero-content{
+    flex-direction: column;
+    align-items: center;
+  }
+  .hero-title {
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.5rem
+
+
+  }
+
+}
+
+/* Espacio adicional en la sección */
+.section-space {
+  height: 600px;
+
+}
+
+/* Sección Sobre Nosotros */
+.sobre-nosotros {
+  background-color: #3f4a5a;
+  padding: 50px 20px;
+
+}
+
+.sobre-nosotros .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 20px;
+  padding: 20px;
+}
+
+.sobre-nosotros .content {
+  flex: 1;
+  color: #d0e685;
+
+}
+
+.sobre-nosotros h2 {
+  font-size: 2.5em;
+  color: #b6e37e;
+  margin: 0;
+  text-align: left;
+  /* Título alineado a la izquierda */
+}
+
+.sobre-nosotros p {
+  font-size: 1.2em;
+  line-height: 1.5;
+  color: #b6e37e;
+  padding-block: 20px;
+  text-align: left;
+  /* Título alineado a la izquierda */
+}
+
+.sobre-nosotros .image {
+  flex: 1;
+  padding-left: 20px;
+}
+
+.sobre-nosotros .image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+  .sobre-nosotros .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .sobre-nosotros .image {
+    display: flex;
+    padding-left: 0;
+    margin-top: 10px;
+  }
+}
+
+/* riqueza verde */
+/* Sección Riqueza Verde con imagen de fondo */
+.riqueza-verde {
+  position: relative;
+  background-image: url('imagenes/fondoquienessomos.jpg');
+  /* Reemplaza con la ruta de tu imagen */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 50px 20px;
+  color: white;
+  /* El texto en blanco para contrastar con el fondo */
+}
+
+/* Overlay difuminado negro */
+.riqueza-verde::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  /* Overlay negro con 50% de opacidad */
+  z-index: 1;
+  /* El overlay estará por encima de la imagen de fondo */
+}
+
+/* Ajustar el contenido de texto */
+.riqueza-verde .container {
+  position: relative;
+  z-index: 2;
+  /* El contenido de texto estará por encima del overlay */
+}
+
+.riqueza-verde h2 {
+  font-size: 2.5em;
+  /* Mismo tamaño de título que la sección anterior */
+  color: #fff;
+  /* Color del título en blanco */
+  text-align: left;
+  /* Alinear a la izquierda */
+  margin: 20px;
+  padding: 20px;
+}
+
+.riqueza-verde p {
+  font-size: 1.2em;
+  line-height: 1.5;
+  color: #fff;
+  /* Color del párrafo en blanco */
+  text-align: left;
+  max-width: 100%;
+  margin: 20px;
+  padding: 20px;
+  z-index: 2;
+}
+
+/* Estilos Responsive para tablets y móviles */
+@media (max-width: 768px) {
+  .riqueza-verde h2 {
+    font-size: 2em;
+    /* Título más pequeño en pantallas más pequeñas */
+  }
+
+  .riqueza-verde p {
+    font-size: 1.1em;
+    /* Reducir el tamaño del texto en móviles */
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .riqueza-verde h2 {
+    font-size: 1.8em;
+    /* Ajuste adicional del título para móviles más pequeños */
+  }
+
+  .riqueza-verde p {
+    font-size: 1em;
+    /* Aún más pequeño el tamaño del texto para pantallas pequeñas */
+    padding: 0 10px;
+  }
+}
+
+/* Fauna sección */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Julius Sans One', sans-serif;
+  background-color: #a7cd72;
+}
+
+.fauna-section {
+  padding: 20px;
+  color: #333;
+  text-align: left;
+  /* Alinea la sección a la izquierda */
+  gap: 2rem;
+}
+
+.fauna-section h2 {
+  font-size: 2.5em;
+  /* Mismo tamaño de título que la sección anterior */
+  color: #2d3e50;
+  /* Color del título */
+  text-align: left;
+  /* Título alineado a la izquierda */
+  margin: 20px 0;
+  padding: 40px;
+}
+
+.fauna-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 5cm;
+  /* Separa las imágenes por 2cm entre cada una */
+}
+
+.fauna-item {
+  margin: 10px;
+  width: 300px;
+  background-color: #dbeac1;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.faunaimg {
+  width: 100%;
+  height: 330px;
+  object-fit: cover;
+  /* Ajusta las imágenes sin distorsionarlas */
+  margin-bottom: 0cm;
+  /* Espacio entre imagen y descripción */
+
+}
+
+.descriptionfauna {
+  padding: 10px;
+  font-size: 0.9em;
+  color: #333;
+  text-align: left;
+}
+
+.fauna-paragraph {
+  font-size: 1.2em;
+  line-height: 1.5;
+  margin-top: 20px;
+  max-width: 100%;
+  text-align: block;
+  /* Párrafo alineado a la izquierda */
+  margin-left: 0;
+  /* Alinear el párrafo a la izquierda */
+  padding: 40px;
+}
+
+.fauna-paragraph p {
+  font-size: 1.1em;
+  color: #333;
+}
+
+@media screen and (max-width: 768px) {
+  .fauna-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .fauna-item {
+    width: 90%;
+  }
+}
+
+/* Flora sección */
+.flora-section {
+  background-color: #74a334;
+  /* Color de fondo #74a334 */
+  padding: 20px;
+  color: #fff;
+  text-align: left;
+  /* Alinear el contenido a la izquierda */
+}
+
+.flora-section h2 {
+  font-size: 2.5em;
+  /* Mismo tamaño de título que las demás secciones */
+  color: #fff;
+  /* Color del título */
+  text-align: left;
+  /* Título alineado a la izquierda */
+  margin: 20px 0;
+  padding: 40px;
+}
+
+.flora-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 5cm;
+  /* Separa las imágenes por 2cm entre cada una */
+}
+
+.flora-item {
+  margin: 10px;
+  width: 300px;
+  background-color: #dbeac1;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.floraimg {
+  width: 100%;
+  height: 330px;
+  object-fit: cover;
+  /* Ajusta las imágenes sin distorsionarlas */
+  margin-bottom: 0cm;
+  /* Espacio entre imagen y descripción */
+}
+
+@media screen and (max-width: 768px) {
+  .flora-container {
+    flex-direction: column;
+    align-items: center;
+  }}
+
+.descriptionflora {
+  padding: 10px;
+  font-size: 0.9em;
+  color: #333;
+  text-align: left;
+}
+
+.flora-paragraph {
+  font-size: 1.2em;
+  line-height: 1.5;
+  margin-top: 20px;
+  max-width: 100%;
+  text-align: block;
+  /* Párrafo alineado a la izquierda */
+  margin-left: 0;
+  /* Alinear el párrafo a la izquierda */
+  padding: 40px;
+}
+
+.flora-paragraph p {
+  font-size: 1.1em;
+  color: #fff;
+}
+
+/* Responsivo para pantallas pequeñas */
+@media screen and (max-width: 768px) {
+  .flora-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .flora-item {
+    width: 90%;
+  }
+}
+
+
+/* Sección Parques Naturales */
+.parques-section {
+  margin: 0;
+  background-color: #686565;
+  /* Color de fondo */
+  padding: 40px;
+  padding-bottom: 2cm;
+  color: #fff;
+  text-align: left;
+
+}
+
+.parques-section h2 {
+  font-size: 2.5em;
+  /* Mismo tamaño de título que las demás secciones */
+  color: #fff;
+  text-align: left;
+  margin: 20px 0;
+  padding: 20px;
+}
+
+.parques-container {
+  display: flex;
+  justify-content: center;
+  /* Distribuir el espacio entre los elementos */
+  flex-wrap: wrap;
+  /* Para hacer responsive la sección */
+  gap: 5cm;
+  /* Espaciado entre los elementos */
+  align-items: stretch;
+  /* Asegurar que los elementos estén alineados en la parte superior */
+}
+
+.parques-item {
+  width: 300px;
+  /* Ancho fijo para todos los ítems */
+  height: 330px;
+  /* Alto fijo para hacer que sea más cuadrado */
+  background-color: #dbeac1;
+  border-radius: 2px;
+  /* Bordes redondeados */
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 20px;
+  /* Añadir espacio debajo del contenedor */
+
+}
+
+.parques-img {
+  width: 100%;
+  /* Asegurar que las imágenes ocupen todo el ancho del contenedor */
+  height: 330px;
+  /* Altura fija para las imágenes */
+  object-fit: cover;
+  /* Ajusta las imágenes sin distorsionarlas */
+  margin-bottom: 0cm;
+  /* Espacio entre imagen y descripción */
+}
+
+
+.description {
+  padding: 10px;
+  font-size: 0.9em;
+  color: #333;
+  text-align: center;
+}
+
+/* Responsivo para pantallas pequeñas */
+@media screen and (max-width: 768px) {
+  .parques-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center
+  }
+
+  .parques-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .parques-item {
+    width: 90%;
+  }
+}
+
+/* Responsivo para pantallas pequeñas */
+.senderos-section {
+  display: flex;
+  text-align: center;
+  padding: 2cm;
+  background-color: #e6e6e5;
+}
+
+.senderos-section h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #6E8B3D;
+  text-align: left;
+  padding: 40px;
+}
+
+.senderos-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+
+
+.senderos-text {
+  width: 45%;
+  color: #6E8B3D;
+  font-size: 1.5em;
+  text-align: right;
+}
+
+
+@media screen and (max-width: 768px) {
+  .senderos-section{
+    flex-direction: column;
+    align-items: center
+  }
+
+  .senderos-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .senderos-text h3 {
+    font-size: 1em;
+    text-align: center;
+  }
+
+  #wazeMap {
+    width: 45%;
+    height: 40%;
+  }
+
+
+}
+
+footer {
+  background-color: #2E3B21;
+  /* Un color verde oscuro similar al de la imagen */
+  color: #F0F0F0;
+  /* Color claro para el texto */
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer-content p {
+  margin: 5px 0;
+  font-size: 1.2em;
+  letter-spacing: 2px;
+  /* Espaciado entre letras */
+}
+
+footer p:first-child {
+  font-size: 1.3em;
+  /* Tamaño más grande para los nombres */
+}
+
+@media (max-width: 768px) {
+  .footer-content p {
+    font-size: 1em;
+  }
+
+  footer p:first-child {
+    font-size: 1.1em;
+  }
+}
